@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 function PostCard({$id, title, featureImage}) {
 
-  console.log($id)
+  
   
   return (
     <Link to={`/post/${$id}`}>
