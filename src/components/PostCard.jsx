@@ -12,7 +12,7 @@ function PostCard({$id, title, featureImage}) {
         <div >
             <div >
                 <img src={service.getFilePreview(featureImage)} alt={title}
-               className='w-72'/>
+               className='w-72 h-60'/>
 
             </div>
             <h2

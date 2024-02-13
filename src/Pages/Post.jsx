@@ -41,18 +41,19 @@ function Post() {
     };
 
     return post ? (
-        <div >
+        <div  className="py-8">
             <Container>
-                <div >
+                <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
                     <img
                         src={service.getFilePreview(post.featureImage)}
                         alt={post.title}
+                        className="rounded-xl w-1/3"
                     />
 
                     {isAuthor && (
-                        <div >
+                        <div className="absolute right-6 top-6">
                             <Link to={`/edit-post/${post.$id}`}>
-                                <Button >
+                                <Button bgColor="bg-green-500" className="mr-3" >
                                     Edit
                                 </Button>
                             </Link>
@@ -62,8 +63,8 @@ function Post() {
                         </div>
                     )}
                 </div>
-                <div >
-                    <h1 >{post.title}</h1>
+                <div className="w-full mb-6">
+                    <h1 className="text-2xl font-bold">{post.title}</h1>
                 </div>
                 <div className="browser-css">
                     {parse(post.content)}

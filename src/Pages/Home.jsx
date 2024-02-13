@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import service from "../appwrite/database";
 import Container from '../components/container/Container';
-import PostCard from '../components/Postcard';
+import PostCard from '../components/PostCard';
 
 function Home() {
     const [posts, setPosts] = useState([])
@@ -17,27 +17,27 @@ function Home() {
 
     if (posts.length === 0) {
         return (
-            <div >
+            <div className='w-full text-center py-8 mt-4 bg-slate-300' >
                 <Container>
-                    <div className='w-full h-screen flex justify-center bg-slate-300'>
-                        <div >
-                            <h1 className='text-4xl font-bold ' >
+                    <div className="flex flex-wrap">
+                        <div className="p-2 w-full">
+                            <h1 className="text-2xl font-bold hover:text-gray-500" >
                                 Login to read posts
                             </h1>
                         </div>
 
                     </div>
-                    <hr className='h-1 bg-black p2' />
+               
                 </Container>
             </div>
         )
     }
     return (
-        <div >
+        <div className='w-full py-8'>
             <Container >
-                <div className='flex '>
+                <div className='flex flex-wrap'>
                     {posts?.map((post) => (
-                        <div key={post.$id} >
+                        <div key={post.$id} className='p-2 w-1/4'>
                             <PostCard $id={post.$id} title={post.title} featureImage={post.featureImage} />
                         </div>
                     ))}
